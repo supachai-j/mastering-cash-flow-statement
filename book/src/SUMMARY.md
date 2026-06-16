@@ -20,8 +20,14 @@
 - [6. Application & Forecasting](ch06-forecasting.md)
 - [7. Cash Flow & Valuation](ch07-valuation.md)
 
+# Part IV — The Investor's Field Guide
+
+- [8. Reading the Statement Like an Investor](ch08-investor-field-guide.md)
+- [9. Which Cash-Flow Multiple, When?](ch09-valuation-multiples.md)
+
 # Reference
 
 - [Formula Sheet](formula-sheet.md)
 - [Glossary](glossary.md)
+- [Test Yourself — Quiz Bank](quiz-bank.md)
 - [Further Reading & Sources](further-reading.md)

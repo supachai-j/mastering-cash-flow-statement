@@ -35,6 +35,11 @@
     bar.appendChild(btn);
   }
 
+  // ---------- Expand all <details> (quiz answers) before printing/PDF ----------
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+  });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { initMermaid(); addLangSwitch(); });
   } else { initMermaid(); addLangSwitch(); }

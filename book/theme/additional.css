@@ -74,3 +74,20 @@ pre.mermaid { background: transparent; text-align: center; }
 }
 /* web TOC stays a plain clickable list */
 .okf-leader, .okf-pg { display: none; }
+
+/* ---------- Quiz boxes ---------- */
+details.quiz { border:1px solid #d8dee4; border-left:4px solid var(--cfs-info); border-radius:6px;
+  padding:.6rem .9rem; margin:.8rem 0; background:#fbfcfe; }
+details.quiz > summary { cursor:pointer; font-weight:600; }
+details.quiz[open] > summary { margin-bottom:.5rem; border-bottom:1px solid #e6ebf1; padding-bottom:.4rem; }
+details.quiz .ans { color:var(--cfs-accent); font-weight:700; }
+@media print { details.quiz > summary { list-style:none; } details.quiz { break-inside:avoid; } }
+
+/* ---------- Green-flag / Red-flag tables ----------
+   In a "flag table", style the cells of the green and red columns. Use the
+   <table class="flags"> wrapper; 3rd col = green, 4th col = red (matching the cheat sheet). */
+table.flags td:nth-child(3) { background:#ecf7f0; }
+table.flags td:nth-child(4) { background:#fbeeee; }
+.flag-green { color:#1f6f54; font-weight:700; }
+.flag-red   { color:#b4541a; font-weight:700; }
+@media print { table.flags td:nth-child(3), table.flags td:nth-child(4) { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }

@@ -40,6 +40,13 @@ always prefer the current official text over any secondary summary.
 - **CFA Institute — Equity Valuation: free-cash-flow valuation.** FCFF/FCFE discounting and the enterprise→equity bridge. *(Chapter 7)*
 - **McKinsey & Company, *Valuation: Measuring and Managing the Value of Companies*.** The institutional standard on cash-flow-based valuation.
 
+## Practical investor analysis (Chapters 8–9)
+
+- **Beginner investor-education course materials** — the green-flag / red-flag reading framework and the "which multiple, when" approach in Chapters 8–9 are adapted from a beginner stock-analysis course (cheat sheets and quizzes), reproduced for teaching and cross-referenced with the authoritative sources below.
+- **Corporate Finance Institute — valuation multiples.** Clear definitions and use-cases for [P/E](https://corporatefinanceinstitute.com/resources/valuation/price-earnings-ratio/), [P/FCF](https://corporatefinanceinstitute.com/resources/valuation/price-to-free-cash-flow/), [P/OCF](https://corporatefinanceinstitute.com/resources/valuation/price-to-cash-flow-ratio/), and [EV/EBITDA](https://corporatefinanceinstitute.com/resources/valuation/ev-ebitda/). *(Chapter 9)*
+- **Corporate Finance Institute — bank valuation.** Why financials are valued on earnings and book value (P/E, P/TBV), not cash-flow multiples. — <https://corporatefinanceinstitute.com/resources/valuation/how-bank-valuation-works> *(Chapters 6 & 9)*
+- **Company data — [stockanalysis.com](https://stockanalysis.com).** The source used to verify the FY2024–2025 company figures (operating cash flow, CapEx, free cash flow, buybacks, dividends) cited in Chapter 8. Always confirm against each company's latest annual report / 10-K.
+
 <div class="callout warn">
 <span class="callout-title">⚠️ On links and dates</span>
 Standards are amended over time (e.g. restricted-cash and supplier-finance disclosures discussed in Chapter 4). All web sources were consulted in 2026; URLs and standard texts change. Always confirm against the current official standard before relying on a classification for a real filing.
