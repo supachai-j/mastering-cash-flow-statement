@@ -1,6 +1,6 @@
 [book]
 title = "เชี่ยวชาญงบกระแสเงินสด"
-authors = ["Supachai Jaturaprom"]
+authors = ["Supachai Jaturaprom (ศุภชัย จตุรพรม)", "Claude Code (AI)"]
 description = "คู่มือวิเคราะห์งบกระแสเงินสดอย่างครบวงจร — ตั้งแต่การจัดทำ การอ่าน การตรวจจับสัญญาณผิดปกติ ไปจนถึงการประเมินมูลค่า"
 language = "th"
 src = "src"

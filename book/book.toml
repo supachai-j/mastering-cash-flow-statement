@@ -1,6 +1,6 @@
 [book]
 title = "Mastering the Cash Flow Statement"
-authors = ["Supachai Jaturaprom"]
+authors = ["Supachai Jaturaprom (ศุภชัย จตุรพรม)", "Claude Code (AI)"]
 description = "A comprehensive analysis guide to preparing, reading, stress-testing, and valuing with the statement of cash flows."
 language = "en"
 src = "src"

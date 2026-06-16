@@ -49,9 +49,9 @@ jobs:
             pdfseparate "$d/body.pdf" "$d/p-%04d.pdf"; rm -f "$d/p-0001.pdf"
             pdfunite "$d/cover.pdf" $(ls "$d"/p-*.pdf | sort) "$out"; rm -rf "$d"; }
           gen "$PWD/book/book/print.html"    "$PWD/book/book/mastering-cash-flow-statement-en.pdf" \
-              "Mastering the Cash Flow Statement" "Mastering the Cash Flow Statement · 2026" || true
+              "Mastering the Cash Flow Statement" "Mastering the Cash Flow Statement · Compiled by Supachai Jaturaprom (ศุภชัย จตุรพรม) · Written by Claude Code (AI)" || true
           gen "$PWD/book-th/book/print.html" "$PWD/book/book/th/mastering-cash-flow-statement-th.pdf" \
-              "เชี่ยวชาญงบกระแสเงินสด" "เชี่ยวชาญงบกระแสเงินสด · 2026" || true
+              "เชี่ยวชาญงบกระแสเงินสด" "เชี่ยวชาญงบกระแสเงินสด · เรียบเรียง: ศุภชัย จตุรพรม · เขียนโดย Claude Code (AI)" || true
           ls -la "$PWD/book/book/"*.pdf "$PWD/book/book/th/"*.pdf 2>/dev/null || echo "no PDFs (non-fatal)"
 
       - uses: actions/upload-pages-artifact@v3

@@ -3,8 +3,8 @@
   <h1 class="cover-title">Mastering the<br>Cash Flow Statement</h1>
   <hr class="cover-rule">
   <div class="cover-sub">Prepare it. Read it. Stress-test it. Value with it.</div>
-  <div class="cover-author">Supachai Jaturaprom</div>
-  <div class="cover-meta">First edition · 2026</div>
+  <div class="cover-author">Compiled by Supachai Jaturaprom (ศุภชัย จตุรพรม)</div>
+  <div class="cover-meta">Written by Claude Code (AI) · First edition · 2026</div>
 </div>
 
 > **Profit is an opinion; cash is a fact.** A company can report record earnings and still go bankrupt — because earnings are an accounting construct, but payroll, suppliers, and lenders are paid in cash. The statement of cash flows is the one financial statement that is hardest to fake and closest to economic reality. This book teaches you to master it.
