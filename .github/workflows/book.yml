@@ -1,0 +1,69 @@
+name: Build & deploy book
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz \
+            | tar -xz -C "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Build both books
+        run: |
+          mdbook build book
+          mdbook build book-th
+          mkdir -p book/book/th
+          cp -r book-th/book/* book/book/th/
+
+      - name: Generate PDFs (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-thai-tlwg fonts-noto-core fonts-noto-color-emoji poppler-utils
+          sudo fc-cache -f
+          export CHROME_PATH="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || true)"
+          echo "Chrome at: $CHROME_PATH"
+          npm i --no-save puppeteer-core@24
+          gen() { local src=$1 out=$2 title=$3 credit=$4 d; d=$(mktemp -d)
+            node scripts/print-pdf.js "$src" "$d/cover.pdf" "" cover ""   || { rm -rf "$d"; return 1; }
+            node scripts/print-pdf.js "$src" "$d/body.pdf" "$title" body "$credit" || { rm -rf "$d"; return 1; }
+            pdfseparate "$d/body.pdf" "$d/p-%04d.pdf"; rm -f "$d/p-0001.pdf"
+            pdfunite "$d/cover.pdf" $(ls "$d"/p-*.pdf | sort) "$out"; rm -rf "$d"; }
+          gen "$PWD/book/book/print.html"    "$PWD/book/book/mastering-cash-flow-statement-en.pdf" \
+              "Mastering the Cash Flow Statement" "Mastering the Cash Flow Statement · 2026" || true
+          gen "$PWD/book-th/book/print.html" "$PWD/book/book/th/mastering-cash-flow-statement-th.pdf" \
+              "เชี่ยวชาญงบกระแสเงินสด" "เชี่ยวชาญงบกระแสเงินสด · 2026" || true
+          ls -la "$PWD/book/book/"*.pdf "$PWD/book/book/th/"*.pdf 2>/dev/null || echo "no PDFs (non-fatal)"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: book/book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

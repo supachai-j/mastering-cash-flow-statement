@@ -1,0 +1,26 @@
+[book]
+title = "เชี่ยวชาญงบกระแสเงินสด"
+authors = ["Supachai Jaturaprom"]
+description = "คู่มือวิเคราะห์งบกระแสเงินสดอย่างครบวงจร — ตั้งแต่การจัดทำ การอ่าน การตรวจจับสัญญาณผิดปกติ ไปจนถึงการประเมินมูลค่า"
+language = "th"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/supachai-j/mastering-cash-flow-statement"
+edit-url-template = ""
+additional-css = ["theme/additional.css"]
+additional-js = ["theme/mermaid.min.js", "theme/additional.js"]
+no-section-label = false
+
+[output.html.print]
+enable = true
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+enable = true
+limit-results = 30

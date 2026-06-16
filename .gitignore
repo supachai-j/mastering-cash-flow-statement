@@ -1,0 +1,9 @@
+.DS_Store
+.obsidian/
+*.swp
+.idea/
+.vscode/
+node_modules/
+# mdBook build output (rebuilt by CI)
+book/book/
+book-th/book/

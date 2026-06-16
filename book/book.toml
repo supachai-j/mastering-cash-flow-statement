@@ -1,0 +1,26 @@
+[book]
+title = "Mastering the Cash Flow Statement"
+authors = ["Supachai Jaturaprom"]
+description = "A comprehensive analysis guide to preparing, reading, stress-testing, and valuing with the statement of cash flows."
+language = "en"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/supachai-j/mastering-cash-flow-statement"
+edit-url-template = ""
+additional-css = ["theme/additional.css"]
+additional-js = ["theme/mermaid.min.js", "theme/additional.js"]
+no-section-label = false
+
+[output.html.print]
+enable = true
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+enable = true
+limit-results = 30

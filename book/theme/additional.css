@@ -1,0 +1,76 @@
+/* ============================================================
+   Mastering the Cash Flow Statement — shared theme
+   ============================================================ */
+
+:root {
+  --cfs-accent: #1f6f54;       /* cash-green */
+  --cfs-accent-soft: #e6f3ee;
+  --cfs-warn: #b4541a;
+  --cfs-warn-soft: #fbeee4;
+  --cfs-info: #1f5fb4;
+  --cfs-info-soft: #e8f0fb;
+}
+
+/* ---------- Readability ---------- */
+.content main { line-height: 1.65; }
+.content h1, .content h2, .content h3 { font-weight: 700; }
+.content h2 { margin-top: 2.2rem; border-bottom: 2px solid var(--cfs-accent-soft); padding-bottom: .25rem; }
+.content table { margin: 1rem 0; }
+.content table th { background: var(--cfs-accent-soft); }
+.content blockquote { border-left: 4px solid var(--cfs-accent); background: var(--cfs-accent-soft); }
+
+/* ---------- Callout boxes ---------- */
+.callout { border-radius: 8px; padding: .9rem 1.1rem; margin: 1.2rem 0; border-left: 5px solid; }
+.callout .callout-title { font-weight: 700; margin-bottom: .4rem; display: block; }
+.callout.tip     { background: var(--cfs-accent-soft); border-color: var(--cfs-accent); }
+.callout.warn    { background: var(--cfs-warn-soft);   border-color: var(--cfs-warn); }
+.callout.example { background: var(--cfs-info-soft);   border-color: var(--cfs-info); }
+.callout.key     { background: #fff7e0;                border-color: #c79a1e; }
+
+/* formula block */
+.formula { background:#f4f6f8; border:1px solid #d8dee4; border-radius:6px;
+           padding:.6rem .9rem; margin:.8rem 0; font-family: ui-monospace,Menlo,Consolas,monospace; overflow-x:auto; }
+
+/* mermaid diagrams */
+pre.mermaid { background: transparent; text-align: center; }
+
+/* ---------- Cover (PDF page 1 + web landing) ---------- */
+.cover {
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #0f3d2e 0%, #1f6f54 55%, #2f9e74 100%);
+  color: #fff; text-align: center;
+  padding: 12vh 10% 8vh;
+  border-radius: 10px;
+}
+.cover .eyebrow { letter-spacing: .35em; text-transform: uppercase; font-size: .8rem; opacity: .85; }
+.cover h1.cover-title { font-size: 2.6rem; line-height: 1.15; margin: .6em 0 .2em; border: none; color:#fff; }
+.cover .cover-sub { font-size: 1.2rem; opacity: .95; font-weight: 300; }
+.cover .cover-rule { width: 80px; height: 3px; background: #ffd36b; margin: 1.4rem auto; border: none; }
+.cover .cover-author { margin-top: 2.2rem; font-size: 1rem; opacity: .9; }
+.cover .cover-meta { margin-top: .3rem; font-size: .8rem; opacity: .7; }
+
+/* ---------- Language switch button ---------- */
+.lang-switch {
+  background: var(--cfs-accent); color: #fff; border: none; border-radius: 6px;
+  padding: 4px 12px; margin-left: 8px; cursor: pointer; font-weight: 600; font-size: .85rem;
+}
+.lang-switch:hover { background: #14543f; }
+
+/* ============================================================
+   PRINT (PDF via headless Chrome)
+   ============================================================ */
+@media print {
+  @page { size: A4; margin: 17mm 15mm; }
+  @page :first { margin: 0; }
+  .cover {
+    min-height: 100vh; border-radius: 0;
+    page-break-after: always;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  /* TOC dot-leaders + page numbers, print only */
+  .toc li:has(.okf-pg:not(:empty)) .okf-leader { flex: 1; border-bottom: 1px dotted #b9a7e6; margin: 0 .4rem; }
+  .callout, .formula { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+/* web TOC stays a plain clickable list */
+.okf-leader, .okf-pg { display: none; }
